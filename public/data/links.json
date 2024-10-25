@@ -1,22 +1,39 @@
 {
     "version": "1.0",
-    "lastUpdated": "2024-04-24",
+    "lastUpdated": "2024-10-25",
     "categories": {
         "llm": {
             "name": "CHAT大模型",
             "description": "各公司发布的大模型聊天应用",
             "items": [
                 {
-                    "id": "tongyi",
-                    "name": "通义千问",
-                    "company": "阿里巴巴",
-                    "url": "https://tongyi.aliyun.com/",
-                    "tranco": "tongyi.aliyun.com",
-                    "icon": "images/tongyi.png",
+                    "id": "chatgpt",
+                    "name": "ChatGPT",
+                    "company": "OpenAI",
+                    "url": "https://chatgpt.com/",
+                    "tranco": "chatgpt.com",
+                    "icon": "images/chatgpt.png",
                     "features": [
-                        "对话"
+                        "对话",
+                        "代码",
+                        "图像"
                     ],
-                    "isFeatured": false,
+                    "isFeatured": true,
+                    "status": "active"
+                },
+                {
+                    "id": "claude",
+                    "name": "Claude",
+                    "company": "Anthropic",
+                    "url": "https://claude.ai/",
+                    "tranco": "claude.ai",
+                    "icon": "images/claude.png",
+                    "features": [
+                        "对话",
+                        "代码",
+                        "图像"
+                    ],
+                    "isFeatured": true,
                     "status": "active"
                 },
                 {
@@ -33,19 +50,6 @@
                     "status": "active"
                 },
                 {
-                    "id": "deepseek",
-                    "name": "DeepSeek",
-                    "company": "DeepSeek",
-                    "url": "https://chat.deepseek.com/",
-                    "tranco": "chat.deepseek.com",
-                    "icon": "images/deepseek.png",
-                    "features": [
-                        "对话"
-                    ],
-                    "isFeatured": false,
-                    "status": "active"
-                },
-                {
                     "id": "kimi",
                     "name": "KIMI",
                     "company": "Moonshot AI",
@@ -56,6 +60,19 @@
                         "对话"
                     ],
                     "isFeatured": true,
+                    "status": "active"
+                },
+                {
+                    "id": "tongyi",
+                    "name": "通义千问",
+                    "company": "阿里巴巴",
+                    "url": "https://tongyi.aliyun.com/",
+                    "tranco": "tongyi.aliyun.com",
+                    "icon": "images/tongyi.png",
+                    "features": [
+                        "对话"
+                    ],
+                    "isFeatured": false,
                     "status": "active"
                 },
                 {
@@ -112,6 +129,32 @@
                     "status": "active"
                 },
                 {
+                    "id": "poe",
+                    "name": "POE",
+                    "company": "POE",
+                    "url": "https://poe.com/",
+                    "tranco": "poe.com",
+                    "icon": "images/poe.png",
+                    "features": [
+                        "智能助手"
+                    ],
+                    "isFeatured": false,
+                    "status": "active"
+                },
+                {
+                    "id": "deepseek",
+                    "name": "DeepSeek",
+                    "company": "DeepSeek",
+                    "url": "https://chat.deepseek.com/",
+                    "tranco": "chat.deepseek.com",
+                    "icon": "images/deepseek.png",
+                    "features": [
+                        "对话"
+                    ],
+                    "isFeatured": false,
+                    "status": "active"
+                },
+                {
                     "id": "baixiaoying",
                     "name": "百小应",
                     "company": "百川智能",
@@ -161,36 +204,6 @@
                         "对话"
                     ],
                     "isFeatured": false,
-                    "status": "active"
-                },
-                {
-                    "id": "chatgpt",
-                    "name": "ChatGPT",
-                    "company": "OpenAI",
-                    "url": "https://chatgpt.com/",
-                    "tranco": "chatgpt.com",
-                    "icon": "images/chatgpt.png",
-                    "features": [
-                        "对话",
-                        "代码",
-                        "图像"
-                    ],
-                    "isFeatured": true,
-                    "status": "active"
-                },
-                {
-                    "id": "claude",
-                    "name": "Claude",
-                    "company": "Anthropic",
-                    "url": "https://claude.ai/",
-                    "tranco": "claude.ai",
-                    "icon": "images/claude.png",
-                    "features": [
-                        "对话",
-                        "代码",
-                        "图像"
-                    ],
-                    "isFeatured": true,
                     "status": "active"
                 },
                 {
@@ -253,7 +266,7 @@
                     "company": "Meta",
                     "url": "https://www.meta.ai/",
                     "tranco": "meta.ai",
-                    "icon": "images/chatglm.png",
+                    "icon": "images/meta.png",
                     "features": [
                         "对话"
                     ],
@@ -280,6 +293,18 @@
             "description": "基于大模型的各类应用工具",
             "items": [
                 {
+                    "id": "perplexity",
+                    "name": "Perplexity",
+                    "url": "https://www.perplexity.ai/",
+                    "tranco": "perplexity.ai",
+                    "icon": "images/perplexity.png",
+                    "features": [
+                        "搜索"
+                    ],
+                    "isFeatured": true,
+                    "status": "active"
+                },
+                {
                     "id": "metaso",
                     "name": "秘塔AI搜索",
                     "url": "https://metaso.cn/",
@@ -287,6 +312,19 @@
                     "icon": "images/metaso.png",
                     "features": [
                         "搜索"
+                    ],
+                    "isFeatured": true,
+                    "status": "active"
+                },
+                {
+                    "id": "coze-cn",
+                    "name": "扣子",
+                    "company": "字节跳动",
+                    "url": "https://www.coze.cn/",
+                    "tranco": "coze.cn",
+                    "icon": "images/coze.png",
+                    "features": [
+                        "智能体"
                     ],
                     "isFeatured": true,
                     "status": "active"
@@ -316,18 +354,6 @@
                     "status": "active"
                 },
                 {
-                    "id": "perplexity",
-                    "name": "Perplexity",
-                    "url": "https://www.perplexity.ai/",
-                    "tranco": "perplexity.ai",
-                    "icon": "images/perplexity.png",
-                    "features": [
-                        "搜索"
-                    ],
-                    "isFeatured": false,
-                    "status": "active"
-                },
-                {
                     "id": "globe-explorer",
                     "name": "Globe Explorer",
                     "url": "https://explorer.globe.engineer/",
@@ -344,7 +370,7 @@
                     "name": "Flowith",
                     "url": "https://flowith.io/",
                     "tranco": "flowith.io",
-                    "icon": "images/chatglm.png",
+                    "icon": "images/flowith.png",
                     "features": [
                         "工作流程"
                     ],
@@ -419,38 +445,6 @@
                     "icon": "images/bolt.png",
                     "features": [
                         "代码"
-                    ],
-                    "isFeatured": false,
-                    "status": "active"
-                }
-            ]
-        },
-        "ai_agents": {
-            "name": "智能体平台",
-            "description": "支持构建和部署AI智能体的平台",
-            "items": [
-                {
-                    "id": "coze-cn",
-                    "name": "扣子",
-                    "company": "字节跳动",
-                    "url": "https://www.coze.cn/",
-                    "tranco": "coze.cn",
-                    "icon": "images/coze.png",
-                    "features": [
-                        "智能体"
-                    ],
-                    "isFeatured": true,
-                    "status": "active"
-                },
-                {
-                    "id": "poe",
-                    "name": "POE",
-                    "company": "POE",
-                    "url": "https://poe.com/",
-                    "tranco": "poe.com",
-                    "icon": "images/poe.png",
-                    "features": [
-                        "智能助手"
                     ],
                     "isFeatured": false,
                     "status": "active"
