@@ -1,0 +1,4 @@
+tranco
+cairosvg
+python-dotenv
+tinify

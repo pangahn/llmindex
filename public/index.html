@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+    <title>大模型导航</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.5/cdn.min.js"></script>
+    <script defer src="https://busuanzi.9420.ltd/js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "LXGW WenKai TC", cursive;
+            background-color: #f5f5f5;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lxgw-wenkai-tc-light {
+            font-family: "LXGW WenKai TC", cursive;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .lxgw-wenkai-tc-regular {
+            font-family: "LXGW WenKai TC", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .lxgw-wenkai-tc-bold {
+            font-family: "LXGW WenKai TC", cursive;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* 导航栏样式 */
+        .nav {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .nav-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            white-space: nowrap;
+            flex-shrink: 0; /* 防止标题被压缩 */
+            min-width: max-content; /* 确保标题不会被换行 */
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-left: 2rem;
+            flex-grow: 1;
+        }
+
+        .menu-item {
+            position: relative;
+            padding: 0.5rem 0.5rem;
+            cursor: pointer;
+            color: #333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .menu-item:hover {
+            color: #4a90e2;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-arrow {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid currentColor;
+            margin-left: 4px;
+            transition: transform 0.2s ease;
+        }
+
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f5f5f5;
+            color: #4a90e2;
+        }
+
+        .search-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-left: auto; /* 将搜索框推到右边 */
+            flex-shrink: 0; /* 防止搜索框被压缩 */
+        }
+
+        .search-input {
+            width: 300px;
+            padding: 0.5rem 2rem 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+            font-size: 0.875rem;
+        }
+
+        .search-input:focus {
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            pointer-events: none;
+        }
+
+        /* 主要内容区样式 */
+        .main-content {
+            flex-grow: 1;
+            padding: 2rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 1rem;
+        }
+
+        .grid-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .item-icon {
+            width: 64px;
+            height: 64px;
+            object-fit: cover;
+            margin-bottom: 0.75rem;
+        }
+
+        .item-name {
+            font-weight: 500;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background: white;
+            padding: 1.5rem 0;
+            margin-top: auto;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-text {
+            color: #666;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 1.25rem;
+        }
+
+        .social-link:hover {
+            color: #4a90e2;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-content {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .nav-menu {
+                margin-left: 0;
+                gap: 1rem;
+                order: 3; /* 在移动端将菜单移到最后 */
+                width: 100%; /* 在移动端占据整行 */
+            }
+
+            .search-box {
+                order: 2;
+            }
+
+            .search-input {
+                width: 200px;
+            }
+
+            .grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?eb1d02c6244bbcfb2938f1fa64cef792";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+    <div x-data="{
+        searchQuery: '',
+        categories: null,
+        async init() {
+            try {
+                const response = await fetch('data/links.json');
+                const data = await response.json();
+                this.categories = data.categories;
+            } catch (error) {
+                console.error('Error loading data:', error);
+            }
+        },
+        filterItems(items) {
+            if (!items) return [];
+            return items.filter(item => {
+                if (item.status !== 'active') return false;
+                if (!this.searchQuery) return true;
+                const searchLower = this.searchQuery.toLowerCase();
+                return item.name.toLowerCase().includes(searchLower) ||
+                       item.id.toLowerCase().includes(searchLower);
+            });
+        }
+    }" x-init="init()">
+        <!-- 导航栏 -->
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-content">
+                    <h1 class="nav-title">大模型导航</h1>
+                    <div class="nav-menu">
+                        <div class="dropdown">
+                            <a class="menu-item"><i class="fa-solid fa-compass"></i> 排行<span class="dropdown-arrow"></span></a>
+                            <div class="dropdown-content">
+                                <a href="https://lmarena.ai/?leaderboard" target="_blank" class="dropdown-item">Arena 竞技场</a>
+                                <a href="https://rank.opencompass.org.cn/" target="_blank" class="dropdown-item">OpenCompass</a>
+                            </div>
+                        </div>
+                        <a href="/rank.html" target="_blank" class="menu-item"><i class="fa-solid fa-chart-area"></i> 趋势</a>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" x-model="searchQuery" class="search-input">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 主要内容区 -->
+        <main class="main-content container">
+            <template x-if="categories">
+                <template x-for="(category, key) in categories" :key="key">
+                    <section class="section">
+                        <h2 class="section-title" x-text="category.name"></h2>
+                        <p class="section-description" x-text="category.description"></p>
+
+                        <div class="grid">
+                            <template x-for="item in filterItems(category.items)" :key="item.id">
+                                <a :href="`${item.url}${item.url.includes('?') ? '&' : '?'}utm_source=llmindex.link`" target="_blank" class="grid-item">
+                                    <img :src="item.icon" :alt="item.name" class="item-icon">
+                                    <div class="item-name">
+                                        <span x-text="item.name"></span>
+                                        <span x-show="item.isFeatured">🔥</span>
+                                    </div>
+                                </a>
+                            </template>
+                        </div>
+                    </section>
+                </template>
+            </template>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-text">
+                        &copy; 2024 大模型导航. 保留所有权利.
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/pangahn" class="social-link"> <i class="fab fa-github"></i></a>
+                        <a href="https://www.zhihu.com/people/pan_gan" class="social-link"><i class="fab fa-zhihu"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
