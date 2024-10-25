@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="referrer" content="unsafe-url" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
     <title>大模型趋势</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,15 +10,38 @@
     <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@300;400;700&display=swap" rel="stylesheet">
     <script defer src="https://busuanzi.9420.ltd/js"></script>
     <style>
-        body {
-            font-family: "LXGW WenKai TC", cursive;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "LXGW WenKai TC", cursive;
+            background-color: #f6f8fa;
+            color: #333;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #f6f8fa;
-            color: #333;
+        }
+
+        .lxgw-wenkai-tc-light {
+            font-family: "LXGW WenKai TC", cursive;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .lxgw-wenkai-tc-regular {
+            font-family: "LXGW WenKai TC", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .lxgw-wenkai-tc-bold {
+            font-family: "LXGW WenKai TC", cursive;
+            font-weight: 700;
+            font-style: normal;
         }
 
         h1 {
