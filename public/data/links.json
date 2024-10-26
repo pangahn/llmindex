@@ -59,18 +59,21 @@
                     "features": [
                         "对话"
                     ],
-                    "isFeatured": true,
+                    "isFeatured": false,
                     "status": "active"
                 },
                 {
                     "id": "tongyi",
                     "name": "通义千问",
-                    "company": "阿里巴巴",
+                    "company": "阿里云",
                     "url": "https://tongyi.aliyun.com/",
                     "tranco": "tongyi.aliyun.com",
+                    "about": "https://www.aliyun.com/about",
                     "icon": "images/tongyi.png",
                     "features": [
-                        "对话"
+                        "对话",
+                        "AI搜索",
+                        "文生图"
                     ],
                     "isFeatured": false,
                     "status": "active"
@@ -90,14 +93,17 @@
                     "status": "active"
                 },
                 {
-                    "id": "chatglm",
-                    "name": "智谱清言",
-                    "company": "智谱AI",
-                    "url": "https://chatglm.cn/",
-                    "tranco": "chatglm.cn",
-                    "icon": "images/chatglm.png",
+                    "id": "hailuoai",
+                    "name": "海螺 AI",
+                    "company": "稀宇科技",
+                    "url": "https://hailuoai.com/",
+                    "tranco": "hailuoai.com",
+                    "icon": "images/hailuoai.png",
+                    "about": "https://minimaxi.com/about",
                     "features": [
-                        "对话"
+                        "对话",
+                        "视频",
+                        "音乐"
                     ],
                     "isFeatured": false,
                     "status": "active"
@@ -108,9 +114,11 @@
                     "company": "腾讯",
                     "url": "https://yuanbao.tencent.com/",
                     "tranco": "yuanbao.tencent.com",
+                    "about": "https://hunyuan.tencent.com/",
                     "icon": "images/yuanbao.png",
                     "features": [
-                        "对话"
+                        "对话",
+                        "文生图"
                     ],
                     "isFeatured": false,
                     "status": "active"
@@ -124,123 +132,6 @@
                     "icon": "images/copilot.png",
                     "features": [
                         "智能助手"
-                    ],
-                    "isFeatured": false,
-                    "status": "active"
-                },
-                {
-                    "id": "poe",
-                    "name": "POE",
-                    "company": "POE",
-                    "url": "https://poe.com/",
-                    "tranco": "poe.com",
-                    "icon": "images/poe.png",
-                    "features": [
-                        "智能助手"
-                    ],
-                    "isFeatured": false,
-                    "status": "active"
-                },
-                {
-                    "id": "deepseek",
-                    "name": "DeepSeek",
-                    "company": "DeepSeek",
-                    "url": "https://chat.deepseek.com/",
-                    "tranco": "chat.deepseek.com",
-                    "icon": "images/deepseek.png",
-                    "features": [
-                        "对话"
-                    ],
-                    "isFeatured": false,
-                    "status": "active"
-                },
-                {
-                    "id": "baixiaoying",
-                    "name": "百小应",
-                    "company": "百川智能",
-                    "url": "https://ying.baichuan-ai.com/",
-                    "tranco": "ying.baichuan-ai.com",
-                    "icon": "images/baixiaoying.png",
-                    "features": [
-                        "对话"
-                    ],
-                    "isFeatured": false,
-                    "status": "active"
-                },
-                {
-                    "id": "wanzhi",
-                    "name": "万知",
-                    "company": "网易",
-                    "url": "https://www.wanzhi.com/",
-                    "tranco": "wanzhi.com",
-                    "icon": "images/wanzhi.png",
-                    "features": [
-                        "对话"
-                    ],
-                    "isFeatured": false,
-                    "status": "active"
-                },
-                {
-                    "id": "xinghuo",
-                    "name": "讯飞星火",
-                    "company": "科大讯飞",
-                    "url": "https://xinghuo.xfyun.cn/",
-                    "tranco": "xinghuo.xfyun.cn",
-                    "icon": "images/xinghuo.png",
-                    "features": [
-                        "对话"
-                    ],
-                    "isFeatured": false,
-                    "status": "active"
-                },
-                {
-                    "id": "yuewen",
-                    "name": "跃问",
-                    "company": "阶跃星辰",
-                    "url": "https://yuewen.cn/",
-                    "tranco": "yuewen.cn",
-                    "icon": "images/yuewen.png",
-                    "features": [
-                        "对话"
-                    ],
-                    "isFeatured": false,
-                    "status": "active"
-                },
-                {
-                    "id": "le_chat",
-                    "name": "Le Chat",
-                    "company": "Mistral AI",
-                    "url": "https://chat.mistral.ai/",
-                    "tranco": "chat.mistral.ai",
-                    "icon": "images/mistral.png",
-                    "features": [
-                        "对话"
-                    ],
-                    "isFeatured": false,
-                    "status": "active"
-                },
-                {
-                    "id": "cohere",
-                    "name": "Cohere",
-                    "company": "Cohere",
-                    "url": "https://coral.cohere.com/",
-                    "tranco": "coral.cohere.com",
-                    "icon": "images/cohere.png",
-                    "features": [
-                        "对话"
-                    ],
-                    "isFeatured": false,
-                    "status": "active"
-                },
-                {
-                    "id": "sensetime",
-                    "name": "商量",
-                    "company": "商汤",
-                    "url": "https://chat.sensetime.com/",
-                    "tranco": "chat.sensetime.com",
-                    "icon": "images/sensetime.png",
-                    "features": [
-                        "对话"
                     ],
                     "isFeatured": false,
                     "status": "active"
@@ -274,12 +165,125 @@
                     "status": "active"
                 },
                 {
-                    "id": "hailuoai",
-                    "name": "海螺 AI",
-                    "company": "MINMAX",
-                    "url": "https://hailuoai.com/",
-                    "tranco": "hailuoai.com",
-                    "icon": "images/hailuoai.png",
+                    "id": "intern-lm",
+                    "name": "书生·浦语",
+                    "company": "上海人工智能创新中心",
+                    "url": "https://internlm-chat.intern-ai.org.cn/",
+                    "tranco": "intern-ai.org.cn",
+                    "about": "https://www.shlab.org.cn/aboutus",
+                    "icon": "images/internlm.png",
+                    "features": [
+                        "对话"
+                    ],
+                    "isFeatured": false,
+                    "status": "active"
+                },
+                {
+                    "id": "deepseek",
+                    "name": "DeepSeek",
+                    "company": "深度求索",
+                    "url": "https://chat.deepseek.com/",
+                    "tranco": "chat.deepseek.com",
+                    "about": "https://www.high-flyer.cn/",
+                    "icon": "images/deepseek.png",
+                    "features": [
+                        "对话"
+                    ],
+                    "isFeatured": false,
+                    "status": "active"
+                },
+                {
+                    "id": "baixiaoying",
+                    "name": "百小应",
+                    "company": "百川智能",
+                    "url": "https://ying.baichuan-ai.com/",
+                    "tranco": "ying.baichuan-ai.com",
+                    "about": "https://www.baichuan-ai.com/home#about-us",
+                    "icon": "images/baixiaoying.png",
+                    "features": [
+                        "对话"
+                    ],
+                    "isFeatured": false,
+                    "status": "active"
+                },
+                {
+                    "id": "wanzhi",
+                    "name": "万知",
+                    "company": "网易",
+                    "url": "https://www.wanzhi.com/",
+                    "tranco": "wanzhi.com",
+                    "icon": "images/wanzhi.png",
+                    "features": [
+                        "对话"
+                    ],
+                    "isFeatured": false,
+                    "status": "active"
+                },
+                {
+                    "id": "xinghuo",
+                    "name": "讯飞星火",
+                    "company": "科大讯飞",
+                    "url": "https://xinghuo.xfyun.cn/",
+                    "tranco": "xinghuo.xfyun.cn",
+                    "about": "https://www.iflytek.com/about.html",
+                    "icon": "images/xinghuo.png",
+                    "features": [
+                        "对话"
+                    ],
+                    "isFeatured": false,
+                    "status": "active"
+                },
+                {
+                    "id": "yuewen",
+                    "name": "跃问",
+                    "company": "阶跃星辰",
+                    "url": "https://yuewen.cn/",
+                    "tranco": "yuewen.cn",
+                    "icon": "images/yuewen.png",
+                    "features": [
+                        "对话"
+                    ],
+                    "isFeatured": false,
+                    "status": "active"
+                },
+                {
+                    "id": "chatglm",
+                    "name": "智谱清言",
+                    "company": "智谱华章",
+                    "url": "https://chatglm.cn/",
+                    "tranco": "chatglm.cn",
+                    "about": "https://zhipuai.cn/aboutus",
+                    "icon": "images/chatglm.png",
+                    "features": [
+                        "对话",
+                        "AI搜索",
+                        "文生图",
+                        "智能体"
+                    ],
+                    "isFeatured": false,
+                    "status": "active"
+                },
+                {
+                    "id": "le_chat",
+                    "name": "Le Chat",
+                    "company": "Mistral AI",
+                    "url": "https://chat.mistral.ai/",
+                    "tranco": "chat.mistral.ai",
+                    "icon": "images/mistral.png",
+                    "features": [
+                        "对话"
+                    ],
+                    "isFeatured": false,
+                    "status": "active"
+                },
+                {
+                    "id": "sensetime",
+                    "name": "商量",
+                    "company": "商汤",
+                    "url": "https://chat.sensetime.com/",
+                    "tranco": "chat.sensetime.com",
+                    "about": "https://www.sensetime.com/cn/about-index",
+                    "icon": "images/sensetime.png",
                     "features": [
                         "对话"
                     ],
@@ -299,7 +303,19 @@
                     "tranco": "perplexity.ai",
                     "icon": "images/perplexity.png",
                     "features": [
-                        "搜索"
+                        "AI搜索"
+                    ],
+                    "isFeatured": true,
+                    "status": "active"
+                },
+                {
+                    "id": "cursor",
+                    "name": "Cursor",
+                    "url": "https://www.cursor.com/",
+                    "tranco": "cursor.com",
+                    "icon": "images/cursor.png",
+                    "features": [
+                        "代码"
                     ],
                     "isFeatured": true,
                     "status": "active"
@@ -311,7 +327,7 @@
                     "tranco": "metaso.cn",
                     "icon": "images/metaso.png",
                     "features": [
-                        "搜索"
+                        "AI搜索"
                     ],
                     "isFeatured": true,
                     "status": "active"
@@ -336,7 +352,7 @@
                     "tranco": "tiangong.cn",
                     "icon": "images/tiangong.png",
                     "features": [
-                        "搜索"
+                        "AI搜索"
                     ],
                     "isFeatured": false,
                     "status": "active"
@@ -348,7 +364,20 @@
                     "tranco": "so.360.com",
                     "icon": "images/360so.png",
                     "features": [
-                        "搜索"
+                        "AI搜索"
+                    ],
+                    "isFeatured": false,
+                    "status": "active"
+                },
+                {
+                    "id": "wenxin-agents",
+                    "name": "文心智能体",
+                    "company": "百度",
+                    "url": "https://agents.baidu.com/",
+                    "tranco": "agents.baidu.com",
+                    "icon": "images/wenxin.png",
+                    "features": [
+                        "智能体"
                     ],
                     "isFeatured": false,
                     "status": "active"
@@ -360,7 +389,7 @@
                     "tranco": "globe.engineer",
                     "icon": "images/globe.png",
                     "features": [
-                        "搜索"
+                        "AI搜索"
                     ],
                     "isFeatured": false,
                     "status": "active"
@@ -390,6 +419,32 @@
                     "status": "active"
                 },
                 {
+                    "id": "rflow",
+                    "name": "Research Flow",
+                    "url": "https://rflow.ai/dashboard",
+                    "tranco": "rflow.ai",
+                    "icon": "images/rflow.png",
+                    "features": [
+                        "学术"
+                    ],
+                    "isFeatured": false,
+                    "status": "active"
+                },
+                {
+                    "id": "aminer",
+                    "name": "Aminer",
+                    "company": "智谱华章",
+                    "url": "https://www.aminer.cn/chat/share/671cf2fe5fc5be93b19f4e04",
+                    "tranco": "aminer.cn",
+                    "about": "https://zhipuai.cn/aboutus",
+                    "icon": "images/aminer.png",
+                    "features": [
+                        "学术"
+                    ],
+                    "isFeatured": false,
+                    "status": "active"
+                },
+                {
                     "id": "research-rabbit",
                     "name": "Research Rabbit",
                     "url": "https://researchrabbitapp.com/",
@@ -402,15 +457,16 @@
                     "status": "active"
                 },
                 {
-                    "id": "cursor",
-                    "name": "Cursor",
-                    "url": "https://www.cursor.com/",
-                    "tranco": "cursor.com",
-                    "icon": "images/cursor.png",
+                    "id": "poe",
+                    "name": "POE",
+                    "company": "POE",
+                    "url": "https://poe.com/",
+                    "tranco": "poe.com",
+                    "icon": "images/poe.png",
                     "features": [
-                        "代码"
+                        "智能助手"
                     ],
-                    "isFeatured": true,
+                    "isFeatured": false,
                     "status": "active"
                 },
                 {
@@ -450,14 +506,14 @@
                     "status": "active"
                 },
                 {
-                    "id": "wenxin-agents",
-                    "name": "文心智能体",
-                    "company": "百度",
-                    "url": "https://agents.baidu.com/",
-                    "tranco": "agents.baidu.com",
-                    "icon": "images/wenxin.png",
+                    "id": "v0dev",
+                    "name": "V0",
+                    "url": "https://v0.dev/",
+                    "tranco": "v0.dev",
+                    "company": "Vercel",
+                    "icon": "images/v0dev.png",
                     "features": [
-                        "智能体"
+                        "代码"
                     ],
                     "isFeatured": false,
                     "status": "active"
@@ -602,9 +658,10 @@
                 {
                     "id": "minimaxi",
                     "name": "MINMAX",
-                    "company": "MINMAX",
+                    "company": "稀宇科技",
                     "url": "https://platform.minimaxi.com/",
                     "icon": "images/minimaxi.png",
+                    "about": "https://minimaxi.com/about",
                     "features": [
                         "API服务"
                     ],
@@ -638,6 +695,7 @@
                     "company": "零一万物",
                     "url": "https://platform.lingyiwanwu.com/",
                     "icon": "images/01ai.png",
+                    "about": "https://www.01.ai/cn",
                     "features": [
                         "API服务"
                     ],
@@ -652,6 +710,20 @@
                     "features": [
                         "API服务"
                     ],
+                    "status": "active"
+                },
+                {
+                    "id": "cohere",
+                    "name": "Cohere",
+                    "company": "Cohere",
+                    "url": "https://dashboard.cohere.com/",
+                    "tranco": "coral.cohere.com",
+                    "icon": "images/cohere.png",
+                    "features": [
+                        "对话",
+                        "API服务"
+                    ],
+                    "isFeatured": false,
                     "status": "active"
                 },
                 {
