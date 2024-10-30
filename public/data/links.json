@@ -72,8 +72,8 @@
                     "icon": "images/tongyi.png",
                     "features": [
                         "对话",
-                        "AI搜索",
-                        "文生图"
+                        "搜索",
+                        "图像"
                     ],
                     "isFeatured": false,
                     "status": "active"
@@ -118,7 +118,7 @@
                     "icon": "images/yuanbao.png",
                     "features": [
                         "对话",
-                        "文生图"
+                        "图像"
                     ],
                     "isFeatured": false,
                     "status": "active"
@@ -131,7 +131,8 @@
                     "tranco": "copilot.microsoft.com",
                     "icon": "images/copilot.png",
                     "features": [
-                        "智能助手"
+                        "对话",
+                        "搜索"
                     ],
                     "isFeatured": false,
                     "status": "active"
@@ -256,8 +257,8 @@
                     "icon": "images/chatglm.png",
                     "features": [
                         "对话",
-                        "AI搜索",
-                        "文生图",
+                        "搜索",
+                        "图像",
                         "智能体"
                     ],
                     "isFeatured": false,
@@ -303,7 +304,7 @@
                     "tranco": "perplexity.ai",
                     "icon": "images/perplexity.png",
                     "features": [
-                        "AI搜索"
+                        "搜索"
                     ],
                     "isFeatured": true,
                     "status": "active"
@@ -322,12 +323,12 @@
                 },
                 {
                     "id": "metaso",
-                    "name": "秘塔AI搜索",
+                    "name": "秘塔搜索",
                     "url": "https://metaso.cn/",
                     "tranco": "metaso.cn",
                     "icon": "images/metaso.png",
                     "features": [
-                        "AI搜索"
+                        "搜索"
                     ],
                     "isFeatured": true,
                     "status": "active"
@@ -347,24 +348,24 @@
                 },
                 {
                     "id": "tiangong",
-                    "name": "天工AI搜索",
+                    "name": "天工搜索",
                     "url": "https://www.tiangong.cn/",
                     "tranco": "tiangong.cn",
                     "icon": "images/tiangong.png",
                     "features": [
-                        "AI搜索"
+                        "搜索"
                     ],
                     "isFeatured": false,
                     "status": "active"
                 },
                 {
                     "id": "360-ai",
-                    "name": "360AI搜索",
+                    "name": "360搜索",
                     "url": "https://so.360.com/",
                     "tranco": "so.360.com",
                     "icon": "images/360so.png",
                     "features": [
-                        "AI搜索"
+                        "搜索"
                     ],
                     "isFeatured": false,
                     "status": "active"
@@ -389,7 +390,7 @@
                     "tranco": "globe.engineer",
                     "icon": "images/globe.png",
                     "features": [
-                        "AI搜索"
+                        "搜索"
                     ],
                     "isFeatured": false,
                     "status": "active"
@@ -401,7 +402,9 @@
                     "tranco": "flowith.io",
                     "icon": "images/flowith.png",
                     "features": [
-                        "工作流程"
+                        "工作流",
+                        "图像",
+                        "智能体"
                     ],
                     "isFeatured": false,
                     "status": "active"
@@ -464,7 +467,7 @@
                     "tranco": "poe.com",
                     "icon": "images/poe.png",
                     "features": [
-                        "智能助手"
+                        "对话"
                     ],
                     "isFeatured": false,
                     "status": "active"
@@ -576,7 +579,7 @@
         },
         "api_platforms": {
             "name": "开放平台",
-            "description": "提供大模型API服务的平台",
+            "description": "提供大模型开放平台的平台",
             "items": [
                 {
                     "id": "aliyun",
@@ -585,7 +588,7 @@
                     "url": "https://www.aliyun.com/product/bailian",
                     "icon": "images/aliyun.png",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 },
@@ -596,7 +599,7 @@
                     "url": "https://platform.deepseek.com/",
                     "icon": "images/deepseek.png",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 },
@@ -607,7 +610,7 @@
                     "url": "https://cloud.baidu.com/wenxin.html",
                     "icon": "images/baidu.png",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 },
@@ -618,7 +621,7 @@
                     "url": "https://platform.moonshot.cn/",
                     "icon": "images/moonshot.png",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 },
@@ -629,7 +632,7 @@
                     "url": "https://bigmodel.cn/",
                     "icon": "images/zhipu.png",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 },
@@ -640,7 +643,7 @@
                     "url": "https://console.volcengine.com/",
                     "icon": "images/volcengine.png",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 },
@@ -651,7 +654,7 @@
                     "url": "https://platform.baichuan-ai.com/",
                     "icon": "images/baichuan.png",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 },
@@ -663,7 +666,7 @@
                     "icon": "images/minimaxi.png",
                     "about": "https://minimaxi.com/about",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 },
@@ -674,7 +677,7 @@
                     "url": "https://platform.stepfun.com/",
                     "icon": "images/stepfun.png",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 },
@@ -685,7 +688,7 @@
                     "url": "https://cloud.tencent.com/product/hunyuan",
                     "icon": "images/tencent.png",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 },
@@ -697,7 +700,7 @@
                     "icon": "images/01ai.png",
                     "about": "https://www.01.ai/cn",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 },
@@ -708,7 +711,7 @@
                     "url": "https://xinghuo.xfyun.cn/",
                     "icon": "images/iflytek.png",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 },
@@ -721,7 +724,7 @@
                     "icon": "images/cohere.png",
                     "features": [
                         "对话",
-                        "API服务"
+                        "开放平台"
                     ],
                     "isFeatured": false,
                     "status": "active"
@@ -733,7 +736,7 @@
                     "url": "https://platform.openai.com/",
                     "icon": "images/chatgpt.png",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 },
@@ -744,7 +747,7 @@
                     "url": "https://ai.google.dev/gemini-api/",
                     "icon": "images/google.png",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 },
@@ -755,7 +758,7 @@
                     "url": "https://x.ai/",
                     "icon": "images/xai.png",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 },
@@ -766,7 +769,7 @@
                     "url": "https://www.anthropic.com/",
                     "icon": "images/anthropic.png",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 },
@@ -777,7 +780,7 @@
                     "url": "https://console.mistral.ai/",
                     "icon": "images/mistral.png",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 },
@@ -788,7 +791,7 @@
                     "url": "https://ai.azure.com/",
                     "icon": "images/azure.png",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 },
@@ -799,7 +802,7 @@
                     "url": "https://aws.amazon.com/cn/bedrock/",
                     "icon": "images/aws.png",
                     "features": [
-                        "API服务"
+                        "开放平台"
                     ],
                     "status": "active"
                 }

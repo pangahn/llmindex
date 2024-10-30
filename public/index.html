@@ -73,8 +73,6 @@
             font-size: 1.25rem;
             font-weight: bold;
             white-space: nowrap;
-            flex-shrink: 0; /* 防止标题被压缩 */
-            min-width: max-content; /* 确保标题不会被换行 */
         }
 
         .nav-menu {
@@ -156,7 +154,7 @@
         }
 
         .search-input {
-            width: 200px;
+            width: 256px;
             padding: 0.5rem 2rem 0.5rem 1rem;
             border: 1px solid #ddd;
             border-radius: 6px;
@@ -182,6 +180,48 @@
         .main-content {
             flex-grow: 1;
             padding: 2rem 2rem;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.1rem;
+            margin-bottom: 1rem;
+            border: 2px dashed #ddd;
+            padding: 1rem 1rem 1.3rem 1rem;
+            position: relative;
+        }
+
+        .clear-filter {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 0.1rem 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            position: absolute;
+            left: 45%;
+            top: 100%;
+            transform: translateY(-50%);
+        }
+
+        .clear-filter:hover {
+            background-color: #357ab8;
+        }
+
+        .tag {
+            background: #e0e0e0;
+            padding: 0.25rem 0.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .tag:hover {
+            background: #4a90e2;
+            color: white;
         }
 
         .section {
@@ -279,7 +319,7 @@
             }
 
             .search-input {
-                width: 100px;
+                width: 110px;
             }
 
             .grid {
@@ -291,6 +331,16 @@
                 text-align: center;
             }
         }
+
+        @media (max-width: 420px) {
+            .search-input {
+                display: none;
+            }
+            .search-icon {
+                display: none;
+            }
+        }
+
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YS4P2ZHLNJ"></script>
     <script>
@@ -314,14 +364,27 @@
     <div x-data="{
         searchQuery: '',
         categories: null,
+        features: [],
         async init() {
             try {
                 const response = await fetch('data/links.json');
                 const data = await response.json();
                 this.categories = data.categories;
+                this.extractFeatures();
             } catch (error) {
                 console.error('Error loading data:', error);
             }
+        },
+        extractFeatures() {
+            const featureSet = new Set();
+            for (const category of Object.values(this.categories)) {
+                for (const item of category.items) {
+                    if (item.status === 'active') {
+                        item.features.forEach(feature => featureSet.add(feature));
+                    }
+                }
+            }
+            this.features = Array.from(featureSet);
         },
         filterItems(items) {
             if (!items) return [];
@@ -330,8 +393,12 @@
                 if (!this.searchQuery) return true;
                 const searchLower = this.searchQuery.toLowerCase();
                 return item.name.toLowerCase().includes(searchLower) ||
-                       item.id.toLowerCase().includes(searchLower);
+                       item.id.toLowerCase().includes(searchLower) ||
+                       item.features.some(feature => feature.toLowerCase().includes(searchLower));
             });
+        },
+        filterByFeature(feature) {
+            this.searchQuery = feature;
         }
     }" x-init="init()">
         <!-- 导航栏 -->
@@ -360,6 +427,12 @@
 
         <!-- 主要内容区 -->
         <main class="main-content container">
+            <div class="tag-cloud">
+                <button @click="searchQuery = ''" class="clear-filter">清空筛选</button>
+                <template x-for="feature in features" :key="feature">
+                    <div class="tag" @click="filterByFeature(feature)" x-text="feature"></div>
+                </template>
+            </div>
             <template x-if="categories">
                 <template x-for="(category, key) in categories" :key="key">
                     <section class="section">
