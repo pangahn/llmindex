@@ -13,6 +13,20 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.5/cdn.min.js"></script>
     <script defer src="https://busuanzi.9420.ltd/js"></script>
     <style>
+        :root{
+            --base-color: #f5f5f5;
+            --base-variant: #ffffff;
+            --text-color: #111528;
+            --primary-color: #232838;
+        }
+
+        .night-mode{
+            --base-color: #222222;
+            --base-variant: #272727;
+            --text-color: #ffffff;
+            --primary-color: #3a435d;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -21,8 +35,8 @@
 
         body {
             font-family: "LXGW WenKai TC", cursive;
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: var(--base-color);
+            color: var(--text-color);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -54,7 +68,7 @@
 
         /* 导航栏样式 */
         .nav {
-            background: white;
+            background: var(--base-variant);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
@@ -87,7 +101,7 @@
             position: relative;
             padding: 0.5rem 0.5rem;
             cursor: pointer;
-            color: #333;
+            color: var(--text-color);
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -122,7 +136,7 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: white;
+            background-color: var(--base-variant);
             min-width: 160px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             border-radius: 4px;
@@ -137,7 +151,7 @@
             display: block;
             padding: 0.75rem 1rem;
             text-decoration: none;
-            color: #333;
+            color: var(--text-color);
         }
 
         .dropdown-item:hover {
@@ -160,6 +174,8 @@
             border-radius: 6px;
             outline: none;
             font-size: 0.875rem;
+            background-color: var(--base-variant);
+            color: var(--text-color);
         }
 
         .search-input:focus {
@@ -212,11 +228,10 @@
         }
 
         .tag {
-            background: #e0e0e0;
+            background: var(--base-variant);
             padding: 0.25rem 0.5rem;
             border-radius: 10px;
             cursor: pointer;
-            transition: background-color 0.3s;
         }
 
         .tag:hover {
@@ -246,7 +261,7 @@
         }
 
         .grid-item {
-            background: white;
+            background: var(--base-variant);
             border-radius: 8px;
             padding: 1rem;
             text-decoration: none;
@@ -278,10 +293,9 @@
 
         /* 页脚样式 */
         .footer {
-            background: white;
+            background: var(--base-variant);
             padding: 1.5rem 0;
             margin-top: auto;
-            border-top: 1px solid #eee;
         }
 
         .footer-content {
@@ -293,7 +307,7 @@
         }
 
         .footer-text {
-            color: #666;
+            color: var(--text-color);
         }
 
         .social-links {
@@ -302,7 +316,7 @@
         }
 
         .social-link {
-            color: #666;
+            color: var(--text-color);
             text-decoration: none;
             font-size: 1.25rem;
         }
@@ -341,6 +355,40 @@
             }
         }
 
+        #theme-switch {
+            height: 50px;
+            width: 50px;
+            padding: 0;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            bottom: 40px;
+            right: 20px;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        #theme-switch svg {
+            fill: var(--primary-color);
+            height: 24px;
+            width: 24px;
+        }
+
+        #theme-switch svg:last-child {
+            display: none;
+        }
+
+        .night-mode #theme-switch svg:first-child {
+            display: none;
+        }
+
+        .night-mode #theme-switch svg:last-child {
+            display: block;
+        }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YS4P2ZHLNJ"></script>
     <script>
@@ -463,6 +511,7 @@
                         &copy; 2024 大模型导航. 保留所有权利.
                     </div>
                     <div class="social-links">
+                        <a href="mailto:business@llmindex.link" class="social-link" title="business@llmindex.link"><i class="fa-regular fa-envelope"></i></a>
                         <a href="https://github.com/pangahn" class="social-link"> <i class="fab fa-github"></i></a>
                         <a href="https://www.zhihu.com/people/pan_gan" class="social-link"><i class="fab fa-zhihu"></i></a>
                     </div>
@@ -470,5 +519,38 @@
             </div>
         </footer>
     </div>
+    <button id="theme-switch">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+            <path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+            <path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/>
+        </svg>
+    </button>
+
+    <script>
+        // 检查 localStorage 中的 darkmode 设置
+        let darkmode = localStorage.getItem('darkmode');
+        const toggleButton = document.getElementById('theme-switch');
+
+        const enableDarkmode = () => {
+            document.body.classList.add('night-mode');
+            localStorage.setItem('darkmode', 'active');
+        };
+
+        const disableDarkmode = () => {
+            document.body.classList.remove('night-mode');
+            localStorage.setItem('darkmode', null);
+        };
+
+        // 页面加载时检查并应用夜间模式
+        if (darkmode === "active") enableDarkmode();
+
+        // 切换按钮事件监听
+        toggleButton.addEventListener('click', () => {
+            darkmode = localStorage.getItem('darkmode');
+            darkmode !== "active" ? enableDarkmode() : disableDarkmode();
+        });
+    </script>
 </body>
 </html>
