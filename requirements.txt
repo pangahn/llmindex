@@ -2,3 +2,6 @@ tranco
 cairosvg
 python-dotenv
 tinify
+lark-oapi
+pandas
+dotenv
