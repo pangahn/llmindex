@@ -417,7 +417,14 @@
             try {
                 const response = await fetch('data/links.json');
                 const data = await response.json();
-                this.categories = data.categories;
+                this.categories = Object.keys(data.categories).reduce((acc, key) => {
+                    const category = data.categories[key];
+                    if (category.status === 'active') {
+                        category.items = category.items.filter(item => item.status === 'active');
+                        acc[key] = category;
+                    }
+                    return acc;
+                }, {});
                 this.extractFeatures();
             } catch (error) {
                 console.error('Error loading data:', error);
@@ -427,9 +434,7 @@
             const featureSet = new Set();
             for (const category of Object.values(this.categories)) {
                 for (const item of category.items) {
-                    if (item.status === 'active') {
-                        item.features.forEach(feature => featureSet.add(feature));
-                    }
+                    item.features.forEach(feature => featureSet.add(feature));
                 }
             }
             this.features = Array.from(featureSet);
@@ -437,12 +442,11 @@
         filterItems(items) {
             if (!items) return [];
             return items.filter(item => {
-                if (item.status !== 'active') return false;
                 if (!this.searchQuery) return true;
-                const searchLower = this.searchQuery.toLowerCase();
-                return item.name.toLowerCase().includes(searchLower) ||
-                       item.id.toLowerCase().includes(searchLower) ||
-                       item.features.some(feature => feature.toLowerCase().includes(searchLower));
+                const keyword = this.searchQuery.toLowerCase();
+                return item.name.toLowerCase().includes(keyword) ||
+                       item.company.toLowerCase().includes(keyword) ||
+                       item.features.some(feature => feature.toLowerCase().includes(keyword));
             });
         },
         filterByFeature(feature) {
@@ -486,7 +490,6 @@
                     <section class="section">
                         <h2 class="section-title" x-text="category.name"></h2>
                         <p class="section-description" x-text="category.description"></p>
-
                         <div class="grid">
                             <template x-for="item in filterItems(category.items)" :key="item.id">
                                 <a :href="`${item.url}${item.url.includes('?') ? '&' : '?'}utm_source=llmindex.link`" target="_blank" class="grid-item">
