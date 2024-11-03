@@ -4,4 +4,3 @@ python-dotenv
 tinify
 lark-oapi
 pandas
-python-dotenv
