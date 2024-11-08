@@ -103,7 +103,6 @@ def main():
                     "tranco": row["tranco"],
                     "icon": icon,
                     "features": row["features"],
-                    "isFeatured": True if row["isFeatured"] == "true" else False,
                     "status": row["status"],
                 }
             )
