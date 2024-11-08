@@ -103,7 +103,7 @@
         <!-- 主要内容区 -->
         <main class="main-content container">
             <div class="tag-cloud">
-                <button @click="searchQuery = ''" class="clear-filter">清空筛选</button>
+                <button @click="searchQuery = ''" class="clear-filter">重置筛选</button>
                 <template x-for="feature in features" :key="feature">
                     <div class="tag" @click="filterByFeature(feature)" x-text="feature"></div>
                 </template>
