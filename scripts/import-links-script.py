@@ -116,9 +116,11 @@ def main():
         link_data["categories"][category_id] = category_data
 
     links_filename = PROJECT_PATH / "public/data/links.json"
+    if not links_filename.parent.exists():
+        links_filename.parent.mkdir()
     with open(links_filename, "w", encoding="utf-8") as json_file:
         json.dump(link_data, json_file, ensure_ascii=False, indent=4)
-        print("success")
+        print("Successfully retrieved site list data")
 
 
 if __name__ == "__main__":
