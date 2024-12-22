@@ -5,7 +5,6 @@
         "alibaba-cloud.tongyi-lingma",
         "ms-python.debugpy",
         "charliermarsh.ruff",
-        "njpwerner.autodocstring",
         "ms-vscode.live-server"
     ]
 }
