@@ -29,7 +29,7 @@ def get_bitable_records(table_id, view_id):
         SearchAppTableRecordRequest.builder()
         .app_token(BITABLE_ID)
         .table_id(table_id)
-        .page_size(100)
+        .page_size(200)
         .request_body(SearchAppTableRecordRequestBody.builder().view_id(view_id).build())
         .build()
     )
