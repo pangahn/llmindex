@@ -2,6 +2,7 @@ translations/
 storage/
 .files/
 source/
+svg/
 links.json
 
 # Byte-compiled / optimized / DLL files

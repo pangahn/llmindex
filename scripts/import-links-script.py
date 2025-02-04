@@ -100,7 +100,6 @@ def main():
                     "name": row["name"],
                     "company": row["company"],
                     "url": row["url"],
-                    "tranco": row["tranco"],
                     "icon": icon,
                     "features": row["features"],
                     "status": row["status"],

@@ -6,7 +6,7 @@ import cairosvg
 
 current_folder = Path(__file__).resolve().parent.parent
 
-svg_folder_path = "/Users/pangan/Downloads/"
+svg_folder_path = current_folder / "svg"
 png_folder_path = current_folder / "source"
 
 
