@@ -6,3 +6,4 @@ lark-oapi
 pandas
 tabulate
 tqdm
+boto3

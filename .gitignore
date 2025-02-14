@@ -3,6 +3,7 @@ storage/
 .files/
 source/
 svg/
+resources/
 links.json
 
 # Byte-compiled / optimized / DLL files

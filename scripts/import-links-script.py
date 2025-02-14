@@ -69,6 +69,7 @@ def bitable_records_to_dataframe(bitable_data: dict):
 
 
 def main():
+    URL_PREFIX = os.getenv("S2_URL_PREFIX")
     CATEGORY_TABLE_ID = os.getenv("CATEGORY_TABLE_ID")
     CATEGORY_VIEW_ID = os.getenv("CATEGORY_VIEW_ID")
     category_bitable_data = get_bitable_records(CATEGORY_TABLE_ID, CATEGORY_VIEW_ID)
@@ -93,7 +94,7 @@ def main():
         _item_df = item_df[item_df["category_id"] == category_id]
         for _, row in _item_df.iterrows():
             item_id = row["item_id"]
-            icon = f"images/{item_id.split('-')[0]}.png"
+            icon = f"{URL_PREFIX}/{item_id.split('-')[0]}.png"
             item_data.append(
                 {
                     "id": item_id,
