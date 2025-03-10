@@ -5,6 +5,7 @@ source/
 svg/
 resources/
 links.json
+uploaded_files.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

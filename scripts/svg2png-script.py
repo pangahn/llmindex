@@ -6,8 +6,8 @@ import cairosvg
 
 current_folder = Path(__file__).resolve().parent.parent
 
-svg_folder_path = current_folder / "svg"
-png_folder_path = current_folder / "source"
+svg_folder_path = current_folder / "resources/svg"
+png_folder_path = current_folder / "resources/source"
 
 
 if not os.path.exists(png_folder_path):
